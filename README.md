@@ -1,2 +1,2 @@
 # hbnrmx.github.io
-hbnr.mx
+https://hbnr.mx
