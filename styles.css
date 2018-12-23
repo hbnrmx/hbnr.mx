@@ -1,0 +1,287 @@
+.violet {
+  color: mediumvioletred;
+}
+.blue {
+  color: #00a2ff;
+}
+.red {
+  color: red;
+}
+.orange {
+  color: orangered;
+}
+.yellow {
+  color: yellow;
+}
+.grey {
+  color: grey;
+}
+html {
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+html body #scene {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: relative;
+}
+html body #scene .bg {
+  position: absolute;
+  top: -5% !important;
+  left: -5% !important;
+  background: url("img/bg.jpg") no-repeat center center;
+  width: 110%;
+  height: 110%;
+  background-size: cover;
+  filter: blur(1px);
+}
+html body .sidebar {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  height: 6vh;
+  width: 100%;
+  flex-direction: row;
+  background-color: rgba(14, 14, 27, 0.8);
+}
+html body .sidebar .flexcontainer {
+  flex-grow: 1;
+  position: relative;
+}
+html body .sidebar .flexcontainer:hover {
+  color: white;
+  background-color: rgba(14, 14, 27, 0.7);
+  transition: background-color 0.2s ease-in, color 0.5s;
+}
+html body .sidebar .flexcontainer button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1vw;
+  vertical-align: middle;
+}
+html body .container {
+  z-index: 0;
+  margin: 0 auto;
+  width: 480px;
+  height: 300px;
+  perspective: 1200px;
+}
+html body .container .card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  color: white;
+}
+html body .container .card .backdrop {
+  height: 115px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#18c5ed+0,1cafff+8,207cca+19,f6ba64+35,fd6a7d+51,6c5589+70,1b6685+83,207cca+93 */
+  background: #18c5ed;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18c5ed', endColorstr='#207cca', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+html body .container .card .front .profile {
+  position: relative;
+  top: -80px;
+  left: 40px;
+  opacity: 1;
+  height: 190px;
+  border-radius: 50%;
+  transition: border-radius 0.3s ease-in-out, opacity 0.15s ease-in-out;
+  backface-visibility: hidden;
+  border: #14141B solid 5px;
+}
+html body .container .card .front .expanded {
+  border-radius: 15px;
+  transition: border-radius 0.3s ease-in-out;
+}
+html body .container .card .front h1 {
+  transform: translateY(0px);
+  font-size: 16px;
+  text-align: center;
+  transition: font-size 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+html body .container .card .front h1 p {
+  margin: 0;
+}
+html body .container .card .front .about-me {
+  display: none;
+}
+html body .container .card .back {
+  transform: rotateY(-180deg);
+}
+html body .container .card .back .contact {
+  margin-left: 200px;
+  padding: 10px;
+}
+html body .container .card .scroller {
+  overflow-y: scroll;
+  padding: 30px;
+}
+html body .container .flipped {
+  transform: translate(-50%, -50%) rotateY(-180deg);
+}
+.side {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 0;
+  background-color: #14141B;
+  overflow: hidden;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.row {
+  flex-direction: row;
+}
+.row .flag {
+  object-fit: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
+}
+.row .de {
+  object-position: 0 -2305px;
+}
+.row .en {
+  object-position: 0 -2913px;
+}
+.row .jp {
+  object-position: 0 -3968px;
+}
+.row .lt {
+  object-position: 0 0;
+}
+.row .pr {
+  object-position: 0 -34px;
+}
+.row .pi {
+  object-position: 0 -65px;
+}
+.row .ex {
+  object-position: 0 -98px;
+}
+.row .dr {
+  object-position: 0 -129px;
+}
+.row .gu {
+  object-position: 0 -161px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.sidebar {
+  height: 6vh !important;
+  width: 100% !important;
+  flex-direction: row !important;
+}
+.sidebar button {
+  padding: 1.9vh !important;
+  font-size: 2vh !important;
+}
+div.wide {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+div.wide .side {
+  border-radius: 0 !important;
+  transition: border-radius 2s ease-in-out;
+}
+div.wide h1.title {
+  transform: translateY(-230px) !important;
+}
+.fa-user,
+.fa-project-diagram {
+  font-size: 1.80vh !important;
+}
+.text {
+  font-family: "Fira Mono", monospace;
+  font-size: 14px;
+}
+.text .l1 {
+  border-left: yellow solid 1px;
+  padding-left: 35px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.text .l1 div {
+  justify-content: normal;
+  align-items: left;
+}
+.text ul {
+  padding: 0;
+}
+.text h4 {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+.text h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+.text h4 a :hover {
+  color: #fff;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*transition: transform 0.5s ease-in-out;*/
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.wide {
+  width: 70vw !important;
+  height: 90vh !important;
+}
+.wide .profile {
+  opacity: 0 !important;
+}
+.wide .subtitle {
+  display: none;
+}
+.wide h1.title {
+  font-size: 18px !important;
+}
+.wide .about-me {
+  display: block !important;
+  margin-top: -200px;
+  padding: 50px;
+}
+.fa-user,
+.fa-project-diagram {
+  font-size: 0.86vw;
+}
