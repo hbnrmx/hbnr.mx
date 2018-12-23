@@ -1,7 +1,10 @@
 $(document).ready(function(){
-    /*init parallax.js*/
-    var parallaxInstance = new Parallax($("#scene").get(0));
 
+    /*init parallax.js*/
+    if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        var parallaxInstance = new Parallax($("#scene").get(0));
+    }
+    
     /*calculate birthday*/
     var now = new Date();
     var then = new Date(1997,12,18,9,56,0,0);
