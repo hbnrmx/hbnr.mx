@@ -45,17 +45,20 @@ html body #scene .bg {
   filter: blur(1px);
 }
 html body .sidebar {
+  min-width: 430px;
   position: absolute;
   top: 0;
   z-index: 1;
   display: flex;
-  height: 6vh;
+  height: 30px;
+  min-height: 50px;
   width: 100%;
   flex-direction: row;
   background-color: rgba(14, 14, 27, 0.8);
 }
 html body .sidebar .flexcontainer {
   flex-grow: 1;
+  flex-shrink: 1;
   position: relative;
 }
 html body .sidebar .flexcontainer:hover {
@@ -69,15 +72,23 @@ html body .sidebar .flexcontainer button {
   display: block;
   text-decoration: none;
   text-align: center;
-  font-size: 1vw;
   vertical-align: middle;
+  padding: 1.9vh 1vw;
+  font-size: 16px;
 }
 html body .container {
+  transition: transform ease-in-out 0.3s;
   z-index: 0;
   margin: 0 auto;
   width: 480px;
   height: 300px;
   perspective: 1200px;
+}
+@media screen and (max-width: 550px) {
+  html body .container {
+    transform: translate(-50%, -50%) scale(0.85);
+    transition: transform ease-in-out 0.3s;
+  }
 }
 html body .container .card {
   width: 100%;
@@ -99,40 +110,52 @@ html body .container .card .backdrop {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18c5ed', endColorstr='#207cca', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
+  border-bottom-left-radius: 55%;
 }
-html body .container .card .front .profile {
-  position: relative;
-  top: -80px;
-  left: 40px;
-  opacity: 1;
-  height: 190px;
-  border-radius: 50%;
-  transition: border-radius 0.3s ease-in-out, opacity 0.15s ease-in-out;
-  backface-visibility: hidden;
-  border: #14141B solid 5px;
-}
-html body .container .card .front .expanded {
+html body .container .card .back .expanded {
   border-radius: 15px;
   transition: border-radius 0.3s ease-in-out;
 }
-html body .container .card .front h1 {
+html body .container .card .back h1 {
   transform: translateY(0px);
   font-size: 16px;
   text-align: center;
   transition: font-size 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-html body .container .card .front h1 p {
+html body .container .card .back h1 p {
   margin: 0;
 }
-html body .container .card .front .about-me {
+html body .container .card .back .about-me {
   display: none;
 }
-html body .container .card .back {
+html body .container .card .front {
+  position: absolute;
   transform: rotateY(-180deg);
 }
-html body .container .card .back .contact {
-  margin-left: 200px;
+html body .container .card .front .profile {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  opacity: 1;
+  height: 170px;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  border: #14141B solid 5px;
+}
+html body .container .card .front .contact {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   padding: 10px;
+}
+html body .container .card .front .title {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  padding: 3px;
+  margin: 0;
+  line-height: 12px;
+  text-align: center;
 }
 html body .container .card .scroller {
   overflow-y: scroll;
@@ -150,11 +173,6 @@ html body .container .flipped {
   padding: 0;
   background-color: #14141B;
   overflow: hidden;
-}
-.flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .row {
   flex-direction: row;
@@ -195,15 +213,6 @@ html body .container .flipped {
 ::-webkit-scrollbar {
   display: none;
 }
-.sidebar {
-  height: 6vh !important;
-  width: 100% !important;
-  flex-direction: row !important;
-}
-.sidebar button {
-  padding: 1.9vh !important;
-  font-size: 2vh !important;
-}
 div.wide {
   width: 100vw !important;
   height: 100vh !important;
@@ -212,16 +221,9 @@ div.wide .side {
   border-radius: 0 !important;
   transition: border-radius 2s ease-in-out;
 }
-div.wide h1.title {
-  transform: translateY(-230px) !important;
-}
-.fa-user,
-.fa-project-diagram {
-  font-size: 1.80vh !important;
-}
 .text {
   font-family: "Fira Mono", monospace;
-  font-size: 14px;
+  font-size: 13px;
 }
 .text .l1 {
   border-left: yellow solid 1px;
@@ -252,7 +254,6 @@ div.wide h1.title {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /*transition: transform 0.5s ease-in-out;*/
 }
 button {
   background: none;
@@ -273,15 +274,13 @@ button {
 .wide .subtitle {
   display: none;
 }
-.wide h1.title {
-  font-size: 18px !important;
-}
 .wide .about-me {
   display: block !important;
   margin-top: -200px;
   padding: 50px;
 }
-.fa-user,
-.fa-project-diagram {
-  font-size: 0.86vw;
+@media screen and (max-width: 630px) {
+  .sidebar {
+    overflow-x: scroll;
+  }
 }

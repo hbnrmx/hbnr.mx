@@ -51,16 +51,19 @@ html {
 			}
 		}
 		.sidebar {
+			min-width: 430px;
 			position: absolute;
 			top:0;
 			z-index: 1;
 			display: flex;
-			height: 6vh;
+			height: 30px;
+			min-height:50px;
 			width: 100%;
 			flex-direction: row;
 			background-color: rgba(14, 14, 27, 0.8);
 			.flexcontainer {
 				flex-grow: 1;
+				flex-shrink: 1;
 				position: relative;
 				&:hover {
 					color: white;
@@ -74,12 +77,17 @@ html {
 					text-decoration: none;
 					text-align: center;
 					vertical-align: middle;
-					padding: 1.9vh;
-					font-size: 2vh;
+					padding: 1.9vh 1vw;
+					font-size: 16px;
 				}
 			}
 		}
 		.container {
+			@media screen and (max-width: 550px){
+				transform: translate(-50%,-50%) scale(0.85);
+				transition: transform ease-in-out 0.3s;
+			}
+			transition: transform ease-in-out 0.3s;
 			z-index: 0;
 			margin: 0 auto;
 			width: 480px;
@@ -99,19 +107,9 @@ html {
 					background: -webkit-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* Chrome10-25,Safari5.1-6 */
 					background: linear-gradient(135deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18c5ed', endColorstr='#207cca', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+					border-bottom-left-radius: 55%;
 				}
-				.front {
-					.profile {
-						position: relative;
-						top: -80px;
-						left: 40px;
-						opacity: 1;
-						height: 190px;
-						border-radius: 50%;
-						transition: border-radius 0.3s ease-in-out, opacity 0.15s ease-in-out;
-						backface-visibility: hidden;
-						border: @grey solid 5px;
-					}
+				.back {
 					.expanded {
 						border-radius: 15px;
 						transition: border-radius 0.3s ease-in-out;
@@ -129,11 +127,34 @@ html {
 						display:none;
 					}
 				}
-				.back {
+				.front {
+					position: absolute;
 					transform: rotateY(-180deg);
+					.profile {
+						position: absolute;
+						top: 30px;
+						left: 15px;
+						opacity: 1;
+						height: 170px;
+						border-radius: 50%;
+						backface-visibility: hidden;
+						border: @grey solid 5px;
+					}
 					.contact {
-						margin-left: 200px;
+						position: absolute;
+						right:0;
+						bottom:0;
 						padding: 10px;
+					}
+
+					.title {
+						position: absolute;
+						bottom: 0;
+						left: 20px;
+						padding: 3px;
+						margin: 0;
+						line-height: 12px;
+						text-align: center;
 					}
 				}
 				.scroller {
@@ -157,12 +178,6 @@ html {
 	padding: 0;
 	background-color: @grey;
 	overflow: hidden;
-}
-
-.flex {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 .row {
@@ -206,11 +221,6 @@ html {
 	display: none;
 }
 
-	button {
-		padding: 1.9vh !important;
-		font-size: 2vh !important;
-	}
-}
 div.wide{
 	width: 100vw !important;
 	height: 100vh !important;
@@ -218,17 +228,11 @@ div.wide{
 		border-radius: 0 !important;
 		transition: border-radius 2s ease-in-out;
 	}
-	h1.title{
-		transform: translateY(-230px) !important;
-	}
-}
-.fa-user, .fa-project-diagram{
-	font-size: 1.80vh !important;
 }
 
 .text {
 	font-family: "Fira Mono", monospace;
-	font-size: 14px;
+	font-size: 13px;
 	.l1 {
 		border-left: @yellow solid 1px;
 		padding-left: 35px;
@@ -254,13 +258,11 @@ div.wide{
 		}
 	}
 }
-
 .centered {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/*transition: transform 0.5s ease-in-out;*/
 }
 button{
 	background: none;
@@ -280,10 +282,6 @@ button{
 	.subtitle{
 		display: none;
 	}
-	h1.title{
-		//transform: translateY(-250px) !important;
-		font-size: 18px !important;
-	}
 	.about-me{
 		display:block !important;
 		margin-top: -200px;
@@ -291,6 +289,9 @@ button{
 	}
 }
 
-.fa-user, .fa-project-diagram{
-	font-size: 0.86vw;
+@media screen and (max-width: 630px){
+	.sidebar{
+		overflow-x: scroll;
+	}
+
 }
