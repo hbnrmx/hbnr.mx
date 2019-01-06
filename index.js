@@ -20,24 +20,22 @@ $(document).ready(function(){
         $(this).toggleClass("expanded")
     });
 
-    $(".home").click(function(){
-        card.removeClass("wide");
-        card.removeClass("flipped");
-    });
-
     $(".projects").click(function(){
         card.addClass("wide");
         card.removeClass("flipped");
+        document.title = "hbnr.mx | Projects";
     });
 
-    $(".skillset").click(function(){
+    $(".aboutme").click(function(){
         card.addClass("wide");
         card.removeClass("flipped");
+        document.title = "hbnr.mx | About Me";
     });
 
     $(".contactme").click(function(){
         card.addClass("flipped");
         card.removeClass("wide");
+        document.title = "hbnr.mx | Contact";
     });
 
     //if(!card.hasClass("flipped")){
