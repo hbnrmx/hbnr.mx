@@ -22,6 +22,22 @@ $(document).ready(function(){
         $(".obfuscated-mailto").attr("href", $(".obfuscated-mailto").attr("href").replace(",,,", "@").replace("---", "."))
         $(".obfuscated-mail").html($(".obfuscated-mail").html().replace(",,,", "@").replace("---", "."));
 
+        /*greet detectives*/
+        var style = `background-color: #3e90d3;
+                     color: white;
+                     padding: 5px 10px 5px 5px;
+                     border-radius: 10px;
+                     font-size:1.5em;`;
+
+        console.log("%c Hey, how did you? 😨", style + `font-size: 2.5em`);
+
+        console.log("%c I'm hosting this website on github.io which means no fancy backend processing. If you must I suggest looking at the repo:", style);
+
+        console.log("%c https://github.com/hbnrmx/hbnr.mx",`font-size:1.5em;`);
+
+        console.log("%c Thanks!", style);
+
+        /**/
         var card = $(".card");
         $(".profile").hover(function(){
             $(this).toggleClass("expanded")
