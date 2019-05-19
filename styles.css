@@ -144,8 +144,8 @@ html body .container .card .front .profile {
 }
 html body .container .card .front .contact {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 6px;
+  bottom: -6px;
   padding: 10px;
 }
 html body .container .card .front .title {
@@ -227,7 +227,7 @@ div.wide .side {
 }
 .text .l1 {
   border-left: yellow solid 1px;
-  padding-left: 35px;
+  padding-left: 30px;
   padding-top: 2px;
   padding-bottom: 2px;
 }
