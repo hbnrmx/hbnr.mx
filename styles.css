@@ -44,38 +44,6 @@ html body #scene .bg {
   background-size: cover;
   filter: blur(1px);
 }
-html body .sidebar {
-  min-width: 430px;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  height: 30px;
-  min-height: 50px;
-  width: 100%;
-  flex-direction: row;
-  background-color: rgba(14, 14, 27, 0.8);
-}
-html body .sidebar .flexcontainer {
-  flex-grow: 1;
-  flex-shrink: 1;
-  position: relative;
-}
-html body .sidebar .flexcontainer:hover {
-  color: white;
-  background-color: rgba(14, 14, 27, 0.7);
-  transition: background-color 0.2s ease-in, color 0.5s;
-}
-html body .sidebar .flexcontainer button {
-  width: 100%;
-  height: 100%;
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  padding: 1.9vh 1vw;
-  font-size: 16px;
-}
 html body .container {
   transition: transform ease-in-out 0.3s;
   z-index: 0;
@@ -86,7 +54,7 @@ html body .container {
 }
 @media screen and (max-width: 550px) {
   html body .container {
-    transform: translate(-50%, -50%) scale(0.85);
+    transform: translate(-50%, -50%) scale(0.7);
     transition: transform ease-in-out 0.3s;
   }
 }
@@ -112,6 +80,9 @@ html body .container .card .backdrop {
   /* IE6-9 fallback on horizontal gradient */
   border-bottom-left-radius: 55%;
 }
+html body .container .card .backdrop.reversed {
+  border-bottom-left-radius: initial;
+}
 html body .container .card .back .expanded {
   border-radius: 15px;
   transition: border-radius 0.3s ease-in-out;
@@ -124,6 +95,15 @@ html body .container .card .back h1 {
 }
 html body .container .card .back h1 p {
   margin: 0;
+}
+html body .container .card .back h1.reversed {
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 25px;
+  text-align: left;
+}
+html body .container .card .back h1.reversed .grey {
+  font-size: 16px;
 }
 html body .container .card .back .about-me {
   display: none;
@@ -174,47 +154,11 @@ html body .container .flipped {
   background-color: #14141B;
   overflow: hidden;
 }
-.row {
-  flex-direction: row;
-}
-.row .flag {
-  object-fit: none;
-  width: 30px;
-  height: 30px;
-  margin-right: 7px;
-}
-.row .de {
-  object-position: 0 -2305px;
-}
-.row .en {
-  object-position: 0 -2913px;
-}
-.row .jp {
-  object-position: 0 -3968px;
-}
-.row .lt {
-  object-position: 0 0;
-}
-.row .pr {
-  object-position: 0 -34px;
-}
-.row .pi {
-  object-position: 0 -65px;
-}
-.row .ex {
-  object-position: 0 -98px;
-}
-.row .dr {
-  object-position: 0 -129px;
-}
-.row .gu {
-  object-position: 0 -161px;
-}
 ::-webkit-scrollbar {
   display: none;
 }
 div.wide {
-  width: 100vw !important;
+  width: 50vw !important;
   height: 100vh !important;
 }
 div.wide .side {

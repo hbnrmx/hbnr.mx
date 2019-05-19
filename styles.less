@@ -50,41 +50,9 @@ html {
 				filter:blur(1px)
 			}
 		}
-		.sidebar {
-			min-width: 430px;
-			position: absolute;
-			top:0;
-			z-index: 1;
-			display: flex;
-			height: 30px;
-			min-height:50px;
-			width: 100%;
-			flex-direction: row;
-			background-color: rgba(14, 14, 27, 0.8);
-			.flexcontainer {
-				flex-grow: 1;
-				flex-shrink: 1;
-				position: relative;
-				&:hover {
-					color: white;
-					background-color: rgba(14,14,27,0.7);
-					transition: background-color 0.2s ease-in, color 0.5s;
-				}
-				button {
-					width: 100%;
-					height: 100%;
-					display: block;
-					text-decoration: none;
-					text-align: center;
-					vertical-align: middle;
-					padding: 1.9vh 1vw;
-					font-size: 16px;
-				}
-			}
-		}
 		.container {
 			@media screen and (max-width: 550px){
-				transform: translate(-50%,-50%) scale(0.85);
+				transform: translate(-50%,-50%) scale(0.70);
 				transition: transform ease-in-out 0.3s;
 			}
 			transition: transform ease-in-out 0.3s;
@@ -108,12 +76,16 @@ html {
 					background: linear-gradient(135deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18c5ed', endColorstr='#207cca', GradientType=1); /* IE6-9 fallback on horizontal gradient */
 					border-bottom-left-radius: 55%;
+					&.reversed {
+						border-bottom-left-radius: initial;
+					}
 				}
 				.back {
 					.expanded {
 						border-radius: 15px;
 						transition: border-radius 0.3s ease-in-out;
 					}
+					
 					h1 {
 						transform: translateY(0px);
 						font-size: 16px;
@@ -121,6 +93,15 @@ html {
 						transition: font-size 0.5s ease-in-out, transform 0.5s ease-in-out;
 						p {
 							margin:0;
+						}
+						&.reversed {
+							margin-top: 50px;
+							margin-left: 50px;
+							font-size:25px;
+							text-align: left;
+							.grey {
+								font-size: 16px;
+							}
 						}
 					}
 					.about-me{
@@ -180,49 +161,12 @@ html {
 	overflow: hidden;
 }
 
-.row {
-	flex-direction: row;
-	.flag {
-		object-fit: none;
-		width: 30px;
-		height: 30px;
-		margin-right: 7px;
-	}
-	.de {
-		object-position: 0 -2305px;
-	}
-	.en {
-		object-position: 0 -2913px;
-	}
-	.jp {
-		object-position: 0 -3968px;
-	}
-	.lt {
-		object-position: 0 0;
-	}
-	.pr {
-		object-position: 0 -34px;
-	}
-	.pi {
-		object-position: 0 -65px;
-	}
-	.ex {
-		object-position: 0 -98px;
-	}
-	.dr {
-		object-position: 0 -129px;
-	}
-	.gu {
-		object-position: 0 -161px;
-	}
-}
-
 ::-webkit-scrollbar {
 	display: none;
 }
 
 div.wide{
-	width: 100vw !important;
+	width: 50vw !important;
 	height: 100vh !important;
 	.side{
 		border-radius: 0 !important;
@@ -293,5 +237,4 @@ button{
 	.sidebar{
 		overflow-x: scroll;
 	}
-
 }
