@@ -54,7 +54,7 @@ html body .container {
 }
 @media screen and (max-width: 550px) {
   html body .container {
-    transform: translate(-50%, -50%) scale(0.7);
+    transform: translate(-50%, -50%) rotate(90deg);
     transition: transform ease-in-out 0.3s;
   }
 }
