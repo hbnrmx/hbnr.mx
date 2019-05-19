@@ -54,8 +54,10 @@ html body .container {
 }
 @media screen and (max-width: 550px) {
   html body .container {
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%);
     transition: transform ease-in-out 0.3s;
+    width: 300px;
+    height: 480px;
   }
 }
 html body .container .card {
@@ -122,11 +124,21 @@ html body .container .card .front .profile {
   backface-visibility: hidden;
   border: #14141B solid 5px;
 }
+@media screen and (max-width: 550px) {
+  html body .container .card .front .profile {
+    left: 60px;
+  }
+}
 html body .container .card .front .contact {
   position: absolute;
   right: 6px;
   bottom: -6px;
   padding: 10px;
+}
+@media screen and (max-width: 550px) {
+  html body .container .card .front .contact {
+    right: 29px;
+  }
 }
 html body .container .card .front .title {
   position: absolute;
@@ -136,6 +148,12 @@ html body .container .card .front .title {
   margin: 0;
   line-height: 12px;
   text-align: center;
+}
+@media screen and (max-width: 550px) {
+  html body .container .card .front .title {
+    bottom: 180px;
+    left: 64px;
+  }
 }
 html body .container .card .scroller {
   overflow-y: scroll;

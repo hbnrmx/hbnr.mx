@@ -52,8 +52,10 @@ html {
 		}
 		.container {
 			@media screen and (max-width: 550px){
-				transform: translate(-50%,-50%) rotate(90deg);
+				transform: translate(-50%,-50%);
 				transition: transform ease-in-out 0.3s;
+				width: 300px;
+				height: 480px;
 			}
 			transition: transform ease-in-out 0.3s;
 			z-index: 0;
@@ -120,12 +122,20 @@ html {
 						border-radius: 50%;
 						backface-visibility: hidden;
 						border: @grey solid 5px;
+
+						@media screen and (max-width: 550px){
+							left: 60px;
+						}
 					}
 					.contact {
 						position: absolute;
 						right:6px;
 						bottom:-6px;
 						padding: 10px;
+
+						@media screen and (max-width: 550px){
+							right: 29px;
+						}
 					}
 
 					.title {
@@ -136,6 +146,11 @@ html {
 						margin: 0;
 						line-height: 12px;
 						text-align: center;
+
+						@media screen and (max-width: 550px){
+							bottom: 180px;
+							left: 64px;
+						}
 					}
 				}
 				.scroller {
