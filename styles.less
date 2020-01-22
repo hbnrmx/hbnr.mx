@@ -3,8 +3,9 @@
 @red: red;
 @orange: orangered;
 @yellow: yellow;
-@grey: #14141B;
+@dark: #14141B;
 @white: #fff;
+@grey: grey;
 
 .violet {
 	color: @violet
@@ -22,7 +23,7 @@
 	color: @yellow;
 }
 .grey{
-	color: grey;
+	color: @grey;
 }
 html {
 	height: 100%;
@@ -47,7 +48,7 @@ html {
 				width: 110%;
 				height: 110%;
 				background-size: cover;
-				filter:blur(1px)
+				filter:blur(4px)
 			}
 		}
 		.container {
@@ -73,11 +74,11 @@ html {
 					height: 115px;
 					/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#18c5ed+0,1cafff+8,207cca+19,f6ba64+35,fd6a7d+51,6c5589+70,1b6685+83,207cca+93 */
 					background: #18c5ed; /* Old browsers */
-					background: -moz-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* FF3.6-15 */
-					background: -webkit-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* Chrome10-25,Safari5.1-6 */
-					background: linear-gradient(135deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #fd6a7d 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					background: -moz-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #ff4e65 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(-45deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #ff4e65 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(135deg, #18c5ed 0%, #1cafff 8%, #207cca 19%, #f6ba64 35%, #ff4e65 51%, #6c5589 70%, #1b6685 83%, #207cca 93%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18c5ed', endColorstr='#207cca', GradientType=1); /* IE6-9 fallback on horizontal gradient */
-					border-bottom-left-radius: 55%;
+					border-bottom-left-radius: 65%;
 					&.reversed {
 						border-bottom-left-radius: initial;
 					}
@@ -116,12 +117,12 @@ html {
 					.profile {
 						position: absolute;
 						top: 30px;
-						left: 15px;
+						left: 26px;
 						opacity: 1;
 						height: 170px;
 						border-radius: 50%;
 						backface-visibility: hidden;
-						border: @grey solid 5px;
+						border: @dark solid 5px;
 
 						@media screen and (max-width: 550px){
 							left: 60px;
@@ -131,7 +132,7 @@ html {
 						position: absolute;
 						right:6px;
 						bottom:-6px;
-						padding: 10px;
+						padding: 18px;
 
 						@media screen and (max-width: 550px){
 							right: 29px;
@@ -141,7 +142,7 @@ html {
 					.title {
 						position: absolute;
 						bottom: 0;
-						left: 20px;
+						left: 24px;
 						padding: 3px;
 						margin: 0;
 						line-height: 12px;
@@ -172,7 +173,7 @@ html {
 	backface-visibility: hidden;
 	border-radius: 15px;
 	padding: 0;
-	background-color: @grey;
+	background-color: @dark;
 	overflow: hidden;
 }
 
@@ -193,7 +194,7 @@ div.wide{
 	font-family: "Fira Mono", monospace;
 	font-size: 13px;
 	.l1 {
-		border-left: @yellow solid 1px;
+		border-left: @grey solid 1.5px;
 		padding-left: 30px;
 		padding-top: 2px;
 		padding-bottom: 2px;
@@ -206,7 +207,7 @@ div.wide{
 		padding: 0;
 	}
 	h4 {
-		margin-top: 8px;
+		margin-top: 7px;
 		margin-bottom: 2px;
 		a {
 			text-decoration: none;
